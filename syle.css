@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 .container {
@@ -8,9 +9,104 @@
 	height: max-content;
 	padding: 0 15vw;
 }
+.title {
+	font-family: "Solitreo", cursive;
+}
 
 .name {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	margin-top: 2rem;
+}
+
+.about-me {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	gap: 4vw;
+	width: 100%;
+	margin: 2rem 0;
+}
+
+.about-me__photo {
+	width: 40%;
+	object-fit: cover;
+	border-radius: 2rem;
+}
+.about-me__description {
+	text-align: justify;
+	display: flex;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	margin: 4rem 0;
+}
+
+.skills__title {
+	margin: 0 auto;
+}
+
+.skills__container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr 6fr;
+	justify-content: center;
+	column-gap: 4vw;
+	row-gap: 1vw;
+	grid-template-areas:
+		"front-title back-title"
+		"front-list back-list";
+}
+
+.skills__container ul {
+	margin-left: 2rem;
+	justify-self: center;
+}
+
+.skills__front-title {
+	grid-area: front-title;
+	justify-self: center;
+}
+.skills__back-title {
+	grid-area: back-title;
+	justify-self: center;
+}
+
+.skills__front-list {
+	grid-area: front-list;
+}
+.skills__back-list {
+	grid-area: back-list;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 4rem 0;
+}
+
+.contacts ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 4rem;
+	row-gap: 2rem;
+	list-style-type: none;
+}
+
+@media (max-width: 600px) {
+	.about-me {
+		flex-direction: column-reverse;
+	}
+	.about-me__photo {
+		width: 100%;
+	}
 }
